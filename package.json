@@ -15,10 +15,10 @@
     "build:clean": "rimraf css/*.css",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
-    "watch": "globstar npm-run-all build -p watch:*",
+    "watch": "npm-run-all build -p watch:*",
     "build-dev:sass": "node-sass --output-style expanded -- source-map true -o css sass",
-    "watch:sassprefixer": "globstar onchange 'sass/*.scss' -- npm-run-all build-dev:sass -s autoprefixer ",
-    "autoprefixer": "globstar onchange -d 100 'css/*.css' -- autoprefixer-cli -o css/style.css css/*.css ",
+    "watch:sassprefixer": "onchange 'sass/*.scss' -- npm-run-all build-dev:sass -s autoprefixer ",
+    "autoprefixer": "onchange -d 100 'css/*.css' -- autoprefixer-cli -o css/style.css css/*.css ",
     "watch:browsersync": "browser-sync start --server --files 'css/style.css' '*.html' 'js/scripts.js' "
   },
   "keywords": [],
