@@ -21,19 +21,10 @@ function setupColumns(columns) {
     setupCards(col, column.cards);
   });
 }
+
 function setupCards(col, cards) {
   cards.forEach(function(card) {
     var cardObj = new Card(card.id, card.name, card.bootcamp_kanban_column_id);
     col.createCard(cardObj);
   });
 }
-/* Poniżej nie wiem czy jest dobre 
-Column.prototype = {
-  createCard: function(card) {
-    this.element.children('ul').append(card.element);
-  },
-  deleteColumn: function() {
-    this.element.remove();
-  }
-};
-*/

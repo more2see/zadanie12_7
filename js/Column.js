@@ -1,7 +1,7 @@
 function Column(id, name) {
 	var self = this;
 	this.id = id;
-	this.name = name || 'No name given';
+	this.name = name || 'Kolumna bez nazwy';
 	this.element = createColumn();
 
 	function createColumn() {
@@ -26,8 +26,10 @@ function Column(id, name) {
 					bootcamp_kanban_column_id: self.id
 				},
 				success: function(response) {
-					var card = new Card(response.id, cardName);
-					self.createCard(card);
+					if (cardName !== null) {
+						var card = new Card(response.id, cardName);
+						self.createCard(card);
+					}
 				}
 			});
 		});

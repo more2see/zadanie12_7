@@ -15,8 +15,10 @@ $('.create-column').click(function() {
       name: columnName
     },
     success: function(response) {
-      var column = new Column(response.id, columnName);
-      board.createColumn(column);
+      if (columnName !== null) {
+        var column = new Column(response.id, columnName);
+        board.createColumn(column);
+      }
     }
   });
 });
